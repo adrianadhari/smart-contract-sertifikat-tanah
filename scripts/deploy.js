@@ -1,12 +1,11 @@
 const hre = require("hardhat");
 
 async function main() {
-  const LandRegistry = await hre.ethers.getContractFactory("LandRegistry");
-  const landRegistry = await LandRegistry.deploy();
+  const PendaftaranTanah = await hre.ethers.getContractFactory("PendaftaranTanah");
+  const kontrak = await PendaftaranTanah.deploy();
 
-  await landRegistry.waitForDeployment();
-  console.log("LandRegistry deployed to:", landRegistry.target);
-
+  await kontrak.waitForDeployment();
+  console.log("Kontrak PendaftaranTanah berhasil dideploy di:", kontrak.target);
 }
 
 main().catch((error) => {
